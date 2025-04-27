@@ -1,0 +1,333 @@
+@font-face {
+  font-family: 'customFont';
+  src: url('../assets/BrontidevpDemoStyle2-ZV8E3.otf') format('opentype');
+}
+
+:root{
+  --section-header-bg: rgb(67, 67, 67);
+  --section-bg: #faf3f3;
+  --box-shadow: rgba(67, 67, 67, 0.539);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  padding-bottom: 20px; 
+  overflow-x: hidden;
+}
+
+#root {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+  font-family: 'customFont';
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.right-section {
+  padding: 0; 
+}
+
+.right-section .cv-container {
+  aspect-ratio: 210 / 297; 
+  max-width: 794px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the CV horizontally */
+  padding: 20px 40px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add spacing between sections */
+  background-color: var(--section-bg);
+  color: black;
+  box-shadow: 0px 0px 2px 4px var(--box-shadow);
+}
+
+.cv-personal-section{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-section-header{
+  text-decoration: underline;
+}
+
+.cv-educational-section,
+.cv-experience-section{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education-info, .experience-info{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.education-info > *:first-child::after,
+.experience-info > *:first-child::after{
+  content: ',';
+}
+
+/* left section */
+
+.left-section {
+  background-color: rgb(49, 49, 48);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  font-family: 'Times New Roman', Times, serif ;
+  transition: 3s all ease-in-out;
+}
+
+.left-section p span:first-of-type {
+  font-weight: 600;
+}
+
+.section-header{
+  background-color: var(--section-header-bg);
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.font-section > .section-header,
+.educational-section > .section-header{
+  margin: 0px;
+  z-index: 10;
+}
+
+.expand-btn{
+  background: none  ;
+}
+
+.item-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.input-group label{
+  font-weight: bold;
+}
+
+.input-group input{
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: .5px .5px .5px 1px var(--section-header-bg);
+  width: 80%; 
+}
+
+.input-group textarea {
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 0.5px 1px var(--section-header-bg);
+  width: 100%; 
+  min-height: 80px; 
+  resize: vertical;
+  font-family: inherit; 
+}
+
+.personal-section,
+.educational-section,
+.experience-section{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.personal-section form,
+.educational-section form,
+.experience-section form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.personal-section form .save-btn ,
+.educational-section form .save-btn ,
+.experience-section form .save-btn {
+  margin-top: 15px; /* Adjust as needed */
+}
+
+.personal-section,
+.educational-section,
+.experience-section,
+.font-section{
+  border-radius: 15px;
+}
+
+.personal-item,
+.education-item,
+.experience-item,
+.font-section
+{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}
+.font-section{
+  gap: 0px;
+}
+
+.education-item,
+.experience-item,
+.font-item{
+  position: relative;
+  color: black;
+}
+
+.education-item:not(:last-of-type),
+.experience-item:not(:last-of-type){
+  border-bottom: 1px dashed black;
+  padding-bottom: 5px;
+}
+
+.experience-section{
+  background-color: var(--section-bg);
+}
+
+.font-item label{
+  font-weight: 600;
+}
+
+.left-btn-section{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0px 20px;
+
+}
+.clear-btn,
+.download-btn{
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-container{
+  position: absolute;
+  display: flex;
+  gap: 0;
+  top: 0;
+  right: 0;
+}
+
+.edit-btn,
+.delete-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 1rem;
+}
+.education-item > form > .save-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  border: 2px dashed black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* trnasition */
+
+.font-item,
+.educational-section > .item-container{
+  z-index: 5;
+  background-color: var(--section-bg);
+  animation: collapseAnimation .5s ease-in-out forwards;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.font-item.expanded,
+.educational-section > .item-container.expanded{
+  padding: 0;
+  animation: expandAnimation .5s ease-in-out forwards;
+}
+
+
+@keyframes expandAnimation {
+  0%{
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+
+  50%{
+    padding:35px 20px 20px;
+    opacity: .7;
+    transform: translateY(0px);
+  }
+
+  100%{
+    padding:35px 20px 20px;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes collapseAnimation {
+  0%{
+    padding:35px 20px 20px;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+
+  50%{
+    opacity: .7;
+    transform: translateY(0px);
+  }
+
+  100%{
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+}
